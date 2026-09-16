@@ -37,18 +37,18 @@ a {
 }
 
 .site-header {
-  padding: 56px 0 34px;
+  padding: 54px 0 38px;
   background:
-    linear-gradient(135deg, rgba(157, 47, 47, 0.96), rgba(115, 35, 35, 0.92)),
-    radial-gradient(circle at top right, rgba(196, 138, 53, 0.7), transparent 34%);
+    linear-gradient(135deg, rgba(126, 34, 34, 0.94), rgba(75, 40, 35, 0.9)),
+    radial-gradient(circle at top right, rgba(246, 213, 150, 0.42), transparent 38%);
   color: #fffaf0;
 }
 
 .header-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.7fr);
-  gap: 28px;
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.84fr);
+  gap: 30px;
+  align-items: center;
 }
 
 .label {
@@ -97,21 +97,71 @@ h3 {
   font-size: 1.05rem;
 }
 
-.summary-card {
+.hero-photo {
+  margin: 0;
+  overflow: hidden;
   border: 1px solid rgba(255, 250, 240, 0.38);
   border-radius: 8px;
-  padding: 22px;
   background: rgba(255, 250, 240, 0.12);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 42px rgba(39, 28, 25, 0.28);
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.hero-photo figcaption {
+  padding: 8px 12px 10px;
+  color: #fff4dc;
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 .summary-title {
   margin-bottom: 8px;
-  color: #f6d596;
+  color: var(--accent-dark);
   font-weight: 700;
 }
 
-.summary-card ul,
+.quick-points {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(39, 28, 25, 0.05);
+}
+
+.quick-points .summary-title {
+  margin-bottom: 0;
+}
+
+.quick-points ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quick-points li {
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #f8f0e2;
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 .check-list {
   margin: 0;
   padding-left: 1.2rem;
@@ -161,7 +211,18 @@ h3 {
 }
 
 .choice-card {
+  position: relative;
   padding: 22px;
+}
+
+.choice-card::after {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  color: rgba(196, 138, 53, 0.28);
+  content: "●";
+  font-size: 2.3rem;
+  line-height: 1;
 }
 
 .choice-card p,
@@ -332,8 +393,13 @@ summary::marker {
   .header-grid,
   .choice-grid,
   .product,
+  .quick-points,
   .guide-grid {
     grid-template-columns: 1fr;
+  }
+
+  .quick-points ul {
+    grid-template-columns: 1fr 1fr;
   }
 
   .product .button {
@@ -362,5 +428,9 @@ summary::marker {
   th,
   td {
     padding: 12px;
+  }
+
+  .quick-points ul {
+    grid-template-columns: 1fr;
   }
 }
