@@ -281,13 +281,34 @@ tr:last-child td {
 
 .product {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  grid-template-columns: 240px minmax(0, 1.1fr) minmax(250px, 0.75fr);
   gap: 20px;
   padding: 26px;
+  align-items: start;
 }
 
 .product .button {
   grid-column: 1 / -1;
+}
+
+.product-image {
+  margin: 0;
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  object-fit: cover;
+}
+
+.product-image figcaption {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 .facts {
