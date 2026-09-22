@@ -18,3 +18,19 @@
 .ke-hero-photo{background:#f0eadb;border-radius:80px 80px 8px 8px;padding:16px;text-align:center;transform:rotate(1deg)}.ke-hero-photo img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:64px 64px 6px 6px}.ke-hero-photo p{margin:10px 0 0}
 @media(max-width:760px){.ke-hero-photo{display:block;max-width:430px;margin:auto;border-radius:48px 48px 8px 8px}.ke-hero-photo img{border-radius:36px 36px 6px 6px}}
 
+/* 商品紹介ページの見せ場を強くする共通パーツ */
+.ke-page-hero{position:relative;overflow:hidden;border-radius:0 0 24px 24px}
+.ke-page-hero:after{content:"";position:absolute;right:-120px;top:-140px;width:360px;height:360px;border-radius:50%;background:rgba(232,237,223,.8);pointer-events:none}
+.ke-page-hero>div{position:relative;z-index:1}
+.ke-bousai-hero{background:linear-gradient(110deg,#f7f4ec 0%,#eef2e8 55%,#e2ebdf 100%)}
+.ke-meal-hero{background:linear-gradient(110deg,#fff8ec 0%,#f2ead8 48%,#e8f0df 100%)}
+.ke-osechi-hero{background:linear-gradient(110deg,#fff8ec 0%,#f2ead8 45%,#e8eddf 100%)}
+.ke-hero-photo{box-shadow:0 18px 44px rgba(56,89,64,.12)}
+.ke-mini-nav{max-width:1120px;margin:-20px auto 36px;position:relative;z-index:2;display:flex;gap:10px;flex-wrap:wrap;padding:16px;background:#fff;border:1px solid #dadfd2;border-radius:8px;box-shadow:0 12px 30px rgba(56,89,64,.06)}
+.ke-mini-nav a{display:inline-flex;align-items:center;min-height:38px;padding:8px 14px;background:#eef2e8;border:1px solid #d8e2cf;border-radius:4px;text-decoration:none;font-size:13px;font-weight:bold;color:#385940}
+.ke-mini-nav a:hover{background:#385940;color:#fff}
+.ke-feature-band{max-width:1120px;margin:45px auto;padding:34px 38px;background:#fff;border:1px solid #dadfd2;border-radius:8px;box-shadow:0 12px 30px rgba(56,89,64,.05)}
+.ke-feature-band h2{margin-bottom:18px}.ke-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.ke-feature-grid article{background:#f7f4ec;border:1px solid #e1dccf;border-radius:8px;padding:22px}.ke-feature-grid span{display:inline-block;font-size:12px;font-weight:bold;color:#536649;background:#fff;border-radius:30px;padding:5px 11px}.ke-feature-grid h3{font-size:18px;margin:12px 0 8px}.ke-feature-grid p{font-size:14px;color:#657065}
+@media(max-width:1180px){.ke-mini-nav,.ke-feature-band{margin-left:24px;margin-right:24px}}
+@media(max-width:760px){.ke-mini-nav{margin-top:24px}.ke-feature-band{padding:28px 24px}.ke-feature-grid{grid-template-columns:1fr}}
+
