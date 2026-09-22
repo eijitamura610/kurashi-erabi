@@ -1,24 +1,146 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>家族旅行の宿選び｜暮らし選び</title>
   <meta name="description" content="家族旅行の宿探しを、国内・海外、使いやすさの軸で比較。agoda、Yahoo!トラベル、じゃらんを紹介します。">
   <link rel="stylesheet" href="shared.css">
   <style>
-    .travel-hero{background:linear-gradient(135deg,#123b52,#217c86 52%,#f2c879);color:#fff;overflow:hidden;position:relative}.travel-hero::after{content:"✈";position:absolute;right:8%;top:12%;font-size:7rem;opacity:.16;transform:rotate(-12deg)}.travel-hero .ke-hero-inner{position:relative;z-index:1}.travel-visual{min-height:210px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.04)),radial-gradient(circle at 70% 25%,#fbe5a8 0 12%,transparent 13%),linear-gradient(180deg,#7fc6d0 0 48%,#dfb56e 49% 58%,#467b6b 59%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);display:flex;align-items:flex-end;padding:1.2rem;color:#fff;font-weight:700;letter-spacing:.06em}.travel-visual span{background:rgba(16,46,59,.7);padding:.55rem .8rem;border-radius:10px}.travel-card .ke-card-head{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}.travel-tag{display:inline-block;background:#e8f3f0;color:#176b67;border-radius:999px;padding:.3rem .65rem;font-size:.78rem;font-weight:700}.travel-card ul{padding-left:1.2rem}.travel-card li{margin:.35rem 0}.travel-note{font-size:.82rem;color:#66777b}.travel-banner{display:block;width:100%;max-width:300px;height:150px;object-fit:cover;object-position:top;margin:.9rem auto;border-radius:14px;background:#f4f0e8}.travel-banner-link{display:block}
+    .ke-travel-hero{position:relative;max-width:none;margin:0;padding:0;background:#143f55;color:#fff;display:block;overflow:hidden}
+    .ke-travel-hero img{width:100%;height:min(58vw,520px);min-height:390px;object-fit:cover;display:block;filter:saturate(1.05)}
+    .ke-travel-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,47,63,.86) 0%,rgba(16,47,63,.58) 43%,rgba(16,47,63,.1) 100%)}
+    .ke-travel-hero-copy{position:absolute;z-index:1;left:max(24px,calc((100% - 1120px)/2));top:50%;transform:translateY(-50%);max-width:560px}
+    .ke-travel-hero .ke-eyebrow{color:#d7efe8}.ke-travel-hero h1{color:#fff}.ke-travel-hero p{color:#f5fbf8}.ke-travel-hero .ke-pr{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.13)}
+    .ke-travel-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.ke-travel-actions .ke-text-link{color:#fff;margin:20px 0 0;text-decoration:underline;text-underline-offset:4px}
+    .ke-travel-strip{max-width:1120px;margin:-34px auto 35px;position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .ke-travel-strip a{display:block;background:#fff;border:1px solid #d7ded2;border-radius:8px;padding:18px 20px;text-decoration:none;box-shadow:0 12px 28px rgba(28,61,72,.1)}
+    .ke-travel-strip span{display:block;font-size:12px;color:#657065}.ke-travel-strip b{display:block;font-size:18px;color:#2f543d;margin-top:3px}
+    .ke-travel-card{background:#fff;border:1px solid #dadfd2;border-radius:8px;overflow:hidden;box-shadow:0 12px 30px rgba(56,89,64,.07);display:flex;flex-direction:column}
+    .ke-travel-card-head{padding:24px 24px 10px;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+    .ke-travel-card h3{font-size:25px;margin:8px 0 0}.ke-travel-tag{display:inline-block;background:#e8f3f0;color:#176b67;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:bold}
+    .ke-travel-rank{font-family:Georgia,serif;color:#a88a4f;font-size:30px;line-height:1}.ke-travel-banner-wrap{margin:8px 24px 18px;background:#f5f1e7;border:1px solid #e3dccd;border-radius:8px;min-height:190px;display:grid;place-items:center}
+    .ke-travel-banner{display:block;width:100%;max-width:300px;height:auto;margin:auto}.ke-travel-card-body{padding:0 24px 24px;display:flex;flex-direction:column;flex:1}
+    .ke-travel-card-body ul{padding-left:20px;margin:8px 0 4px}.ke-travel-card-body li{margin:5px 0}.ke-travel-card .ke-button{width:100%;margin-top:auto}.ke-travel-note{font-size:12px;color:#657065}
+    .ke-travel-compare{background:#fff;border:1px solid #dadfd2;border-radius:8px;overflow:hidden}.ke-travel-compare table{width:100%;border-collapse:collapse;font-size:14px}.ke-travel-compare th,.ke-travel-compare td{padding:18px;border-bottom:1px solid #dadfd2;text-align:left;vertical-align:top}.ke-travel-compare th{background:#e8eddf;color:#314634}.ke-travel-compare tr:last-child td{border-bottom:0}
+    .ke-travel-guide{background:#eef2e8;border-radius:8px;padding:40px 42px}.ke-travel-guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.ke-travel-guide-grid article{background:#fff;border:1px solid #d8e2cf;border-radius:8px;padding:22px}.ke-travel-guide-grid b{font-family:Georgia,serif;font-size:28px;color:#a88a4f}.ke-travel-guide-grid h3{font-size:18px;margin:8px 0}
+    @media(max-width:1180px){.ke-travel-strip{margin-left:24px;margin-right:24px}.ke-travel-hero-copy{left:24px}}
+    @media(max-width:760px){.ke-travel-hero img{height:560px;min-height:560px}.ke-travel-hero::after{background:linear-gradient(180deg,rgba(16,47,63,.82) 0%,rgba(16,47,63,.68) 55%,rgba(16,47,63,.2) 100%)}.ke-travel-hero-copy{right:24px;top:44%;max-width:none}.ke-travel-actions{display:block}.ke-travel-strip{grid-template-columns:1fr;margin-top:24px}.ke-travel-guide{padding:28px 24px}.ke-travel-guide-grid{grid-template-columns:1fr}.ke-travel-compare{overflow-x:auto}.ke-travel-compare table{min-width:620px}}
   </style>
 </head>
-<body>
-  <header class="ke-header"><div class="ke-container ke-header-inner"><a class="ke-brand" href="home.html">暮らし選び</a><nav><a href="index.html">おせち</a><a href="bousai.html">防災</a><a href="gohan.html">宅配食</a><a class="is-current" href="travel.html">旅行</a></nav></div></header>
-  <main>
-    <section class="ke-hero travel-hero"><div class="ke-container ke-hero-inner"><div class="ke-hero-copy"><p class="ke-eyebrow">TRAVEL / PR</p><h1>家族旅行の宿選びを、<br>迷わず決める。</h1><p>国内旅行も、海外旅行も。<br>行き先と旅のスタイルに合う予約サイトを比べて選べるようにまとめました。</p><p class="ke-pr-note">このページにはA8.netのアフィリエイト広告を含みます。</p></div><div class="travel-visual" aria-label="海辺の旅をイメージしたイラスト"><span>次の休日、どこへ行く？</span></div></div></section>
-    <section class="ke-section"><div class="ke-container"><div class="ke-section-heading"><p class="ke-eyebrow">QUICK PICK</p><h2>まずは、この3つから。</h2><p>「国内で探したい」「海外も候補」など、旅の条件から選べます。</p></div><div class="ke-grid ke-grid-3">
-      <article class="ke-card travel-card"><div class="ke-card-head"><div><span class="travel-tag">海外も探す</span><h3>agoda</h3></div><span class="ke-rank">01</span></div><a class="travel-banner-link" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8PRI4I+4X1W+5ZMCH" rel="sponsored noopener nofollow"><img class="travel-banner" src="https://www29.a8.net/svt/bgt?aid=260920640527&amp;wid=003&amp;eno=01&amp;mid=s00000022946001006000&amp;mc=1" alt="agodaのA8広告バナー"></a><p>国内・海外のホテルを幅広く比較したいときに。</p><ul><li>海外旅行の宿探しにも</li><li>ホテル中心で検索しやすい</li></ul><a class="ke-button" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8PRI4I+4X1W+5YRHE" rel="sponsored noopener nofollow">agodaで宿を探す</a><p class="travel-note">最新の料金・空室・条件は公式サイトでご確認ください。</p></article>
-      <article class="ke-card travel-card"><div class="ke-card-head"><div><span class="travel-tag">国内旅行</span><h3>Yahoo!トラベル</h3></div><span class="ke-rank">02</span></div><a class="travel-banner-link" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8WB9S2+4ZCO+67C4H" rel="sponsored noopener nofollow"><img class="travel-banner" src="https://www21.a8.net/svt/bgt?aid=260920640538&amp;wid=003&amp;eno=01&amp;mid=s00000023244001042000&amp;mc=1" alt="Yahoo!トラベルのA8広告バナー"></a><p>国内の宿を、普段使っているサービスと一緒に探したいときに。</p><ul><li>国内施設をまとめて検索</li><li>予約条件を比較しやすい</li></ul><a class="ke-button" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8WB9S2+4ZCO+60OXE" rel="sponsored noopener nofollow">Yahoo!トラベルで探す</a><p class="travel-note">最新の料金・空室・条件は公式サイトでご確認ください。</p></article>
-      <article class="ke-card travel-card"><div class="ke-card-head"><div><span class="travel-tag">国内の温泉・レジャー</span><h3>じゃらん</h3></div><span class="ke-rank">03</span></div><a class="travel-banner-link" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+58QH36+14CS+64RJ5" rel="sponsored noopener nofollow"><img class="travel-banner" src="https://www29.a8.net/svt/bgt?aid=260920640317&amp;wid=003&amp;eno=01&amp;mid=s00000005230001030000&amp;mc=1" alt="じゃらんのA8広告バナー"></a><p>温泉や観光地、家族向けの宿を国内で探したいときに。</p><ul><li>国内旅行の選択肢が豊富</li><li>宿とレジャーを一緒に検討</li></ul><a class="ke-button" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+58QH36+14CS+6C9LD" rel="sponsored noopener nofollow">じゃらんで宿を探す</a><p class="travel-note">最新の料金・空室・条件は公式サイトでご確認ください。</p></article>
-    </div></div></section>
-    <section class="ke-section ke-section-soft"><div class="ke-container ke-narrow"><div class="ke-section-heading"><p class="ke-eyebrow">HOW TO CHOOSE</p><h2>予約サイトは、旅の条件で選ぶ</h2></div><div class="ke-steps"><div><b>01</b><h3>行き先を決める</h3><p>海外ならagoda、国内ならYahoo!トラベルやじゃらんから探すとスムーズです。</p></div><div><b>02</b><h3>宿のタイプを見る</h3><p>ホテル、旅館、温泉、家族向けなど、旅の目的に合う条件を絞ります。</p></div><div><b>03</b><h3>公式ページで確認</h3><p>料金、キャンセル条件、食事、子ども料金、空室は予約前に必ず確認しましょう。</p></div></div></div></section>
-    <section class="ke-section"><div class="ke-container ke-narrow"><div class="ke-faq"><h2>よくある確認ポイント</h2><details open><summary>子ども連れの旅行で見るところは？</summary><p>添い寝の年齢条件、食事の有無、ベッド幅、禁煙・喫煙、駅からの距離を先に確認すると安心です。</p></details><details><summary>表示価格だけで決めていい？</summary><p>税・サービス料、入湯税、キャンセル料、現地払いの有無まで含めて比較してください。</p></details><details><summary>このページの商品は実体験ですか？</summary><p>このページは各予約サイトの特徴を比較して紹介するものです。実際の利用体験を示すものではありません。</p></details></div></div></section>
-  </main><footer class="ke-footer"><div class="ke-container"><p>暮らし選び｜栄次の家族と暮らしの紹介帖</p><p class="ke-pr-note">掲載情報・料金・空室は変わる場合があります。予約前に各公式サイトで最新情報をご確認ください。</p></div></footer>
-</body></html>
+<body class="ke-page">
+  <a class="ke-skip" href="#main-content">本文へ</a>
+  <header class="ke-header">
+    <a class="ke-brand" href="home.html"><span class="ke-symbol" aria-hidden="true">暮</span><span>暮らし選び<small>栄次の、家族と暮らしの紹介帖</small></span></a>
+    <nav aria-label="共通メニュー">
+      <a href="home.html">ホーム</a><a href="index.html">おせち</a><a href="bousai.html">防災グッズ</a><a href="gohan.html">宅配食</a><a href="travel.html" aria-current="page">旅行</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="ke-travel-hero">
+      <img src="assets/travel-planning-photo.png" alt="スーツケース、旅行ガイド、スマートフォンを並べた旅行計画のイメージ。掲載サービスの商品写真ではありません。">
+      <div class="ke-travel-hero-copy">
+        <p class="ke-eyebrow">TRAVEL BOOKING / PR</p>
+        <p class="ke-pr">A8.netのアフィリエイト広告を含みます</p>
+        <h1>家族旅行の宿選びを、条件から決める。</h1>
+        <p class="ke-lead">国内旅行も海外旅行も、予約サイトごとに得意な探し方があります。行き先、宿のタイプ、キャンセル条件を見ながら、家族に合う入口を選びましょう。</p>
+        <div class="ke-travel-actions">
+          <a class="ke-button" href="#booking-sites">予約サイトを見る <span>↓</span></a>
+          <a class="ke-text-link" href="#compare">比較表を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ke-travel-strip" aria-label="旅行ページの主な入口">
+      <a href="#agoda"><span>海外ホテルも候補なら</span><b>agoda</b></a>
+      <a href="#yahoo-travel"><span>国内宿を探すなら</span><b>Yahoo!トラベル</b></a>
+      <a href="#jalan"><span>温泉・レジャーなら</span><b>じゃらん</b></a>
+    </section>
+
+    <section class="ke-section" id="booking-sites">
+      <p class="ke-eyebrow">QUICK PICK</p>
+      <h2>旅のスタイルに合う予約サイト。</h2>
+      <div class="ke-choice-grid">
+        <article class="ke-travel-card" id="agoda">
+          <div class="ke-travel-card-head"><div><span class="ke-travel-tag">海外も探す</span><h3>agoda</h3></div><span class="ke-travel-rank">01</span></div>
+          <a class="ke-travel-banner-wrap" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8PRI4I+4X1W+5ZMCH" rel="sponsored noopener nofollow"><img class="ke-travel-banner" src="https://www29.a8.net/svt/bgt?aid=260920640527&amp;wid=003&amp;eno=01&amp;mid=s00000022946001006000&amp;mc=1" alt="agodaのA8広告バナー"></a>
+          <div class="ke-travel-card-body">
+            <p>国内・海外のホテルを幅広く比較したいときに。海外旅行や都市部ホテルを探す入口として使いやすい候補です。</p>
+            <ul><li>海外ホテルも候補に入れやすい</li><li>ホテル中心で検索しやすい</li></ul>
+            <a class="ke-button" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8PRI4I+4X1W+5YRHE" rel="sponsored noopener nofollow">agodaで宿を探す</a>
+            <p class="ke-travel-note">最新の料金・空室・条件は公式サイトでご確認ください。</p>
+          </div>
+        </article>
+
+        <article class="ke-travel-card" id="yahoo-travel">
+          <div class="ke-travel-card-head"><div><span class="ke-travel-tag">国内旅行</span><h3>Yahoo!トラベル</h3></div><span class="ke-travel-rank">02</span></div>
+          <a class="ke-travel-banner-wrap" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8WB9S2+4ZCO+67C4H" rel="sponsored noopener nofollow"><img class="ke-travel-banner" src="https://www21.a8.net/svt/bgt?aid=260920640538&amp;wid=003&amp;eno=01&amp;mid=s00000023244001042000&amp;mc=1" alt="Yahoo!トラベルのA8広告バナー"></a>
+          <div class="ke-travel-card-body">
+            <p>国内の宿を、普段使っているサービスと一緒に探したいときに。家族旅行の候補をまとめて比べたい場面に向いています。</p>
+            <ul><li>国内施設をまとめて検索</li><li>予約条件を比較しやすい</li></ul>
+            <a class="ke-button" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+8WB9S2+4ZCO+60OXE" rel="sponsored noopener nofollow">Yahoo!トラベルで探す</a>
+            <p class="ke-travel-note">最新の料金・空室・条件は公式サイトでご確認ください。</p>
+          </div>
+        </article>
+
+        <article class="ke-travel-card" id="jalan">
+          <div class="ke-travel-card-head"><div><span class="ke-travel-tag">温泉・レジャー</span><h3>じゃらん</h3></div><span class="ke-travel-rank">03</span></div>
+          <a class="ke-travel-banner-wrap" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+58QH36+14CS+64RJ5" rel="sponsored noopener nofollow"><img class="ke-travel-banner" src="https://www29.a8.net/svt/bgt?aid=260920640317&amp;wid=003&amp;eno=01&amp;mid=s00000005230001030000&amp;mc=1" alt="じゃらんのA8広告バナー"></a>
+          <div class="ke-travel-card-body">
+            <p>温泉や観光地、家族向けの宿を国内で探したいときに。宿とレジャーを一緒に検討したい人に合います。</p>
+            <ul><li>国内旅行の選択肢が豊富</li><li>温泉・観光地の宿を探しやすい</li></ul>
+            <a class="ke-button" href="https://px.a8.net/svt/ejp?a8mat=4BCFNK+58QH36+14CS+6C9LD" rel="sponsored noopener nofollow">じゃらんで宿を探す</a>
+            <p class="ke-travel-note">最新の料金・空室・条件は公式サイトでご確認ください。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ke-section" id="compare">
+      <p class="ke-eyebrow">COMPARE</p>
+      <h2>ざっくり比較してから選ぶ。</h2>
+      <div class="ke-travel-compare">
+        <table>
+          <thead><tr><th>予約サイト</th><th>向いている旅</th><th>見るポイント</th></tr></thead>
+          <tbody>
+            <tr><td>agoda</td><td>海外旅行、都市部ホテル、国内外をまとめて探したい旅行</td><td>税込価格、キャンセル条件、支払い方法、所在地</td></tr>
+            <tr><td>Yahoo!トラベル</td><td>国内旅行、家族旅行、普段使うサービスで宿を探したい場合</td><td>ポイント条件、食事、部屋タイプ、子ども料金</td></tr>
+            <tr><td>じゃらん</td><td>温泉、観光地、国内レジャーを含めた旅行</td><td>口コミ、プラン内容、入湯税、現地払いの有無</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ke-section">
+      <div class="ke-travel-guide">
+        <p class="ke-eyebrow">HOW TO CHOOSE</p>
+        <h2>予約前に、ここだけ確認。</h2>
+        <div class="ke-travel-guide-grid">
+          <article><b>01</b><h3>子ども条件</h3><p>添い寝の年齢、食事の有無、ベッド幅、子ども料金を先に見ます。</p></article>
+          <article><b>02</b><h3>キャンセル条件</h3><p>いつから料金が発生するか、変更できるかを予約前に確認します。</p></article>
+          <article><b>03</b><h3>移動のしやすさ</h3><p>駅からの距離、駐車場、チェックイン時間を家族の動きに合わせます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ke-section">
+      <div class="ke-faq">
+        <h2>よくある確認ポイント</h2>
+        <details open><summary>子ども連れの旅行で見るところは？</summary><p>添い寝の年齢条件、食事の有無、ベッド幅、禁煙・喫煙、駅からの距離を先に確認すると安心です。</p></details>
+        <details><summary>表示価格だけで決めていい？</summary><p>税・サービス料、入湯税、キャンセル料、現地払いの有無まで含めて比較してください。</p></details>
+        <details><summary>このページの商品は実体験ですか？</summary><p>このページは各予約サイトの特徴を比較して紹介するものです。実際の利用体験を示すものではありません。</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ke-footer">
+    <div>
+      <strong>暮らし選び</strong>
+      <p>家族との毎日に、選ぶための小さな手がかりを。</p>
+    </div>
+    <nav aria-label="フッターメニュー"><a href="home.html">ホーム</a><a href="index.html">おせち選び</a><a href="bousai.html">防災グッズ選び</a><a href="gohan.html">宅配食選び</a><a href="travel.html">旅行選び</a></nav>
+    <p class="ke-small">運営：栄次｜当サイトはA8.netのアフィリエイト広告を利用しています。掲載情報・料金・空室は変わる場合があります。予約前に各公式サイトで最新情報をご確認ください。</p>
+  </footer>
+</body>
+</html>
