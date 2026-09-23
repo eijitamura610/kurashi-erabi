@@ -34,3 +34,6 @@
 @media(max-width:1180px){.ke-mini-nav,.ke-feature-band{margin-left:24px;margin-right:24px}}
 @media(max-width:760px){.ke-mini-nav{margin-top:24px}.ke-feature-band{padding:28px 24px}.ke-feature-grid{grid-template-columns:1fr}}
 
+
+/* 防災ページの入口カード用バナー */
+.ke-choice-grid>article{display:block;padding:25px;background:white;border:1px solid #dadfd2;border-radius:8px;text-decoration:none}.ke-choice-main{display:block;text-decoration:none}.ke-choice-banner{margin-top:18px;padding-top:16px;border-top:1px solid #edf0e6;text-align:center}.ke-choice-banner img{max-width:100%;height:auto;border-radius:4px}.ke-choice-banner img[width="1"]{width:1px;height:1px}.ke-choice-grid-ads article{padding:20px}.ke-choice-grid-ads .ke-choice-main p{min-height:3.7em}@media(max-width:760px){.ke-choice-grid>article{padding:22px}.ke-choice-grid-ads .ke-choice-main p{min-height:0}}
