@@ -40,3 +40,6 @@
 
 /* 最近紹介したテーマ */
 .ke-recent{padding-top:22px}.ke-recent .ke-text-link{margin:12px 0 0;color:#385940;font-weight:bold;text-decoration:none;border-bottom:1px solid #9cad8e}.ke-related .ke-text-link{margin-right:18px}
+
+/* 家事ラクテーマ用 */
+.ke-pick-illustration{display:grid;place-items:center;background:linear-gradient(135deg,#e8eddf,#f7f2e6)}.ke-pick-illustration span{font-size:13px;letter-spacing:.16em;color:#385940;background:#fff!important}.ke-housework-theme-art{display:grid;place-items:end start;background:linear-gradient(135deg,#e8eddf 0%,#f7f2e6 60%,#d9dfd0 100%)}.ke-housework-theme-art:before{content:"";position:absolute;right:42px;top:42px;width:120px;height:120px;border-radius:50%;background:#fff;box-shadow:-90px 70px 0 #385940, -30px 95px 0 #e9bd71}
